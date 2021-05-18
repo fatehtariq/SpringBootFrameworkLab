@@ -1,0 +1,472 @@
+{
+	"info": {
+		"_postman_id": "8359ab97-c1a8-4593-8aec-58d93752dda0",
+		"name": "lab10_FA17_BSCS_019",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "get all",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/user/all",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user",
+						"all"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "localhost:8080/user/all",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/user/",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 03 May 2021 16:27:39 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 1,\n        \"name\": \"ASAD\",\n        \"age\": 40\n    },\n    {\n        \"id\": 2,\n        \"name\": \"SALU\",\n        \"age\": 40\n    },\n    {\n        \"id\": 3,\n        \"name\": \"USAMA\",\n        \"age\": 40\n    },\n    {\n        \"id\": 4,\n        \"name\": \"USAMA\",\n        \"age\": 45\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "save",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"ASAD\",\r\n    \"age\" : 40\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/user/save",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user",
+						"save"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"USAMA\",\r\n    \"age\" : 45\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/user/save",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user",
+								"save"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 03 May 2021 16:27:18 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 4,\n    \"name\": \"USAMA\",\n    \"age\": 45\n}"
+				}
+			]
+		},
+		{
+			"name": "search by ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/user/{0}",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user",
+						"{0}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/user/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 03 May 2021 16:09:27 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 1,\n    \"name\": \"ASAD\",\n    \"age\": 40\n}"
+				}
+			]
+		},
+		{
+			"name": "update by ID",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"SALU\",\r\n    \"age\" : 49\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/user/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"SALU\",\r\n    \"age\" : 49\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/user/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 03 May 2021 16:21:21 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 1,\n    \"name\": \"SALU\",\n    \"age\": 49\n}"
+				}
+			]
+		},
+		{
+			"name": "delete by ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": null
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/user/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 03 May 2021 16:22:34 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 1,\n    \"name\": \"SALU\",\n    \"age\": 49\n}"
+				}
+			]
+		},
+		{
+			"name": "search by Age",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": null
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/user/by-age/40",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user",
+								"by-age",
+								"40"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 03 May 2021 16:27:21 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 1,\n        \"name\": \"ASAD\",\n        \"age\": 40\n    },\n    {\n        \"id\": 2,\n        \"name\": \"SALU\",\n        \"age\": 40\n    },\n    {\n        \"id\": 3,\n        \"name\": \"USAMA\",\n        \"age\": 40\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "search by Name",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": null
+			},
+			"response": [
+				{
+					"name": "search by Name",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/user/by-name/USAMA",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user",
+								"by-name",
+								"USAMA"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 03 May 2021 16:28:37 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 3,\n        \"name\": \"USAMA\",\n        \"age\": 40\n    },\n    {\n        \"id\": 4,\n        \"name\": \"USAMA\",\n        \"age\": 45\n    }\n]"
+				}
+			]
+		}
+	]
+}
